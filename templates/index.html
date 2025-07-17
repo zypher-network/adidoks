@@ -3,6 +3,10 @@
 {% block seo %}
   {{ super() }}
 
+  {% if config.extra.announcement_html %}
+    {{ config.extra.announcement_html | safe }}
+  {% endif %}
+  
   {% if config.title %}
     {% set title = config.title %}
   {% else %}
